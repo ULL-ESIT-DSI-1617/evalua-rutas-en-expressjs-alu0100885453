@@ -2,6 +2,7 @@ var express = require('express')
 var app = express()
 var path = require('path');
 
+
 app.use('/user/:nombredeusuario', function (req, res, next) {
   console.log('Request Type:', req.method);
   console.log('User: ', req.params.nombredeusuario);
@@ -24,12 +25,3 @@ app.get('/user/:nombredeusuario', function (req, res, next) {
  // res.end(req.params.nombredeusuario);
  res.render('index', { title: 'hola '+ req.params.nombredeusuario });
 });
-/*
-// How to use a separated router: express.Router
-var birds = require('./routes/user');
-app.use('/routes/user', user);
-*/
-
-app.listen(3000, function () {
-  console.log('escuchando puerto 3000!')
-})
